@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+.group{
+  height: 100vh;
+  width: 100vw;
+  &__header{
+    height:100px;
+    background-color:#fcf8f8;
+    display: flex;
+    justify-content: space-between;
+    line-height: 100px;
+    margin-bottom: 20px;
+    &-left{
+      font-size:40px;
+      margin-left:50px;
+    }
+    &-right{
+      font-size:30px;
+      margin-right:50px;
+      .name-edit{
+        text-decoration: none;
+        color:blue;
+      }
+    }
+  }
+  &__name{
+    border: 1px solid;
+    background-color:#eff9fc;
+    width:500px;
+    height:calc(100vh - 100px);
+    margin:0 auto;
+    &-list{
+      margin:30px 0 ;
+      font-size:40px;
+      text-align: center;
+    }
+    &-name{
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .group-btn{
+      text-decoration: none;
+    }
+  }
+}
