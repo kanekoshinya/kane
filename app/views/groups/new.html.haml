@@ -1,0 +1,4 @@
+=form_for @group do |f|
+  = f.text_field :name, class: "chat-group-form__input", placeholder: "グループ名を入力してください"
+  = f.collection_select :category_id, Category.all, :id, :name
+  = f.submit "Save", class: "chat-group-form__action-btn"
