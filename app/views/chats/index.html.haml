@@ -8,6 +8,10 @@
   .group__name
     .group__name-list
       グループ一覧
+      = link_to new_category_path,class:"group__name-list-new" do
+        カテゴリー作成
+      = link_to new_group_path,class:"group__name-list-new" do
+        グループ作成
     .group__name-name
       = link_to "#",class:"group-btn" do
         漫画
