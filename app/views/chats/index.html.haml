@@ -14,6 +14,7 @@
         グループ作成
     .group__name-name
       - @category.each do |category|
-        = link_to "#",class:"group-btn" do
+        = link_to category_groups_path(category),class:"group-btn" do
           = category.name
+
     

@@ -1,5 +1,9 @@
 class GroupsController < ApplicationController
 
+  def index
+    @group = Group.where(category_id:params[:category_id])
+  end
+
   def new
     @group = Group.new
   end
@@ -12,6 +16,8 @@ class GroupsController < ApplicationController
       render :new
     end
   end
+
+
 
   private
   def group_params
