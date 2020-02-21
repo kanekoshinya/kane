@@ -1,0 +1,32 @@
+.message
+  .message__header
+    .message__header-group
+      .message__header-group-name
+        = @group.name
+      .message__header-group-lenght
+        5人参加中
+    .message__header-left
+      .message__header-left-back
+        = link_to root_path,class:"toppage-btn"  do
+          トップページ
+      .message__header-left-username
+        = current_user.name
+  .message__contents
+    - @messages.each do |message|
+      .contents__message
+        .contents__message-message
+          = message.content
+        .contents__message-contents
+          .contents__message-contents-good
+            いいね
+          .contents__message-contents-name
+            = message.user.name
+  .form
+    .form-box
+      =form_for [@group,@message] do |f|
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        = f.submit 'Send',class: 'input-btn'
+
+    
+
+    
