@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
 
   def index
-    @group = Group.where(category_id:params[:category_id])
+    @group = Group.where(category_id:params[:category_id]).paginate(page: params[:page],per_page: 5)
   end
 
   def new

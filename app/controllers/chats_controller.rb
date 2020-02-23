@@ -1,5 +1,5 @@
 class ChatsController < ApplicationController
   def index
-    @category = Category.all
+    @category = Category.paginate(page: params[:page],per_page: 5)
   end
 end

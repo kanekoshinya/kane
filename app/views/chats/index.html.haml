@@ -17,5 +17,6 @@
       - @category.each do |category|
         = link_to category_groups_path(category),class:"group-btn",id:1 do
           = category.name
+    = will_paginate @category, :previous_label => ' &lt 前へ', :next_label => '次へ &gt'
     
     
