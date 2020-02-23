@@ -17,3 +17,4 @@
       - @group.each do |group|
         = link_to group_messages_path(group),class:"group-btn" do
           = group.name
+    = will_paginate @group, :previous_label => ' &lt 前へ', :next_label => '次へ &gt'
