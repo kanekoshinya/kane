@@ -32,7 +32,7 @@ $(function(){
         var html = buildHTML(data);
         $('.message__contents').append(html);
         $('form')[0].reset();
-        $('.message_contents').animate({ scrollTop: $('.contents__message')[0].scrollHeight});
+        $('.message__contents').animate({ scrollTop: $('.messages')[0].scrollHeight});
       })
       .fail(function(){
         console.log("error");
@@ -56,6 +56,7 @@ $(function(){
       insertHTML += buildHTML(message)
     });
     $('.message__contents').append(insertHTML);
+    $('.message__contents').animate({ scrollTop: $('.messages')[0].scrollHeight});
   }
   })
   .fail(function(){
