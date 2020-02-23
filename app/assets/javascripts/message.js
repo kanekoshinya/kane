@@ -1,7 +1,7 @@
 $(function(){
   function buildHTML(message){
     var html =
-    `<div class="contents__message">
+    `<div class="contents__message" data-message-id = "${message.id}">
     <div class="contents__message-message">
      ${message.content}
     </div>
@@ -32,9 +32,37 @@ $(function(){
         var html = buildHTML(data);
         $('.message__contents').append(html);
         $('form')[0].reset();
+        $('.message_contents').animate({ scrollTop: $('.contents__message')[0].scrollHeight});
       })
       .fail(function(){
-
+        console.log("error");
       })
+      .always(function() {
+        $('.submit-btn').prop('disabled', false);
+      });
   });
+  var reloadMessages = function(){
+  var last_message_id = $('.contents__message:last').data("message-id");
+  $.ajax({
+    url:"api/messages",
+    type:'get',
+    dataType:'json',
+    data:{id:last_message_id}
+  })
+  .done(function(messages){
+    if (messages.length !==0){
+    var insertHTML = '';
+    $.each(messages,function(i,message){
+      insertHTML += buildHTML(message)
+    });
+    $('.message__contents').append(insertHTML);
+  }
+  })
+  .fail(function(){
+    console.log("no");
+  })
+  }
+  if (document.location.href.match(/\/groups\/\d+\/messages/)){
+    setInterval(reloadMessages,7000);
+  }
 });
