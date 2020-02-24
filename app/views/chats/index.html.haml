@@ -1,7 +1,7 @@
 .group
   .group__header
     .group__header-left
-      = link_to root_path,class:"toppage-btn"  do
+      = link_to root_path,class:"toppage-btn" do
         Enjoy-app
     .group__header-right
       = link_to edit_user_path(current_user),class:"name-edit" do
@@ -15,7 +15,7 @@
         グループ作成
     .group__name-name
       - @category.each do |category|
-        = link_to category_groups_path(category),class:"group-btn",id:1 do
+        = link_to category_groups_path(category),class:"group-btn",id:"top" do
           = category.name
     = will_paginate @category, :previous_label => ' &lt 前へ', :next_label => '次へ &gt'
     
