@@ -4,6 +4,8 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
     @message = Message.new
     @messages = @group.messages.includes(:user)
+    @like = Like.new
+    @likes = Like.where(user_id: current_user.id)
   end
 
   def create
