@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     resources :groups,only:[:index]
   end
   resources :groups,only: [:new,:create] do
-    resources :messages,only: [:index,:create]
+    resources :messages,only: [:index,:create] do
+      resources :likes, only: [:create,:destroy]
+    end
 
     namespace :api do
       resources :messages,only: :index,defaults:{format:'json'}
