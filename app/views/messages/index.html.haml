@@ -20,11 +20,15 @@
           .contents__message-contents
             .contents__message-contents-good
               - if current_user.already_liked?(message)
-                = button_to 'いいねを取り消す',group_message_like_path(@group.id,message.id,@likes.ids),method: :delete
+                = button_to 'Goodを取り消す',group_message_like_path(@group.id,message.id,@likes.ids),method: :delete
               - else 
-                = button_to 'いいね',group_message_likes_path( @group.id,message.id)
+                = button_to 'Good',group_message_likes_path( @group.id,message.id)
             .contents__message-contents-name
               = message.user.name
+            .contents__message-contents-goodcount
+              いいね数:
+              = message.likes.count
+              
   .form
     .form-box
       =form_for [@group,@message] do |f|

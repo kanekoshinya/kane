@@ -15,8 +15,12 @@
         グループ作成
     .group__name-name
       - @category.each do |category|
-        = link_to category_groups_path(category),class:"group-btn",id:"top" do
+        = link_to category_groups_path(category),class:"group-btn" do
           = category.name
     = will_paginate @category, :previous_label => ' &lt 前へ', :next_label => '次へ &gt'
+  .group__good
+    .group__good-list
+      ジャンル一覧
+    
     
     
