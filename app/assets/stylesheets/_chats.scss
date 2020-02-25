@@ -74,4 +74,26 @@
       }
     }
   }
+  &__seach{
+    
+      color:white;
+      text-align: center;
+      margin-top: 20px;
+      &-name{
+        font-size: 25px;
+      }
+      &-seach{
+        font-size: 20px;
+        margin-top: 10px;
+      }
+      &-list{
+        margin-top: 30px;
+        font-size: 20px;
+        margin-left:20px;
+        &-btn{
+          color: white;
+          text-decoration: none;
+        }
+      }
+  }
 }
