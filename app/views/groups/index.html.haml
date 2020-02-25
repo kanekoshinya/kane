@@ -18,3 +18,16 @@
         = link_to group_messages_path(group),class:"group-btn" do
           = group.name
     = will_paginate @group, :previous_label => ' &lt 前へ', :next_label => '次へ &gt'
+  .group__seach
+    .group__seach-name
+      グループ検索
+    .group__seach-seach
+      = search_form_for @q, url: category_groups_path(@category) do |f|
+        = f.search_field :name_cont, class: 'group__seach-box'
+        = f.submit
+    .group__seach-list
+      .group__seach-list
+      - if @groups.any?
+        - @groups.each do |group|
+          = link_to group_messages_path(group),class:"group__seach-list-btn" do
+            = group.name
