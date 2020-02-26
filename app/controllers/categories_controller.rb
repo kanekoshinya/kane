@@ -2,6 +2,7 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    @categories = Category.all
   end
 
   def create
@@ -9,7 +10,7 @@ class CategoriesController < ApplicationController
     if @category.save
       redirect_to root_path
     else
-      render :new
+      redirect_to new_category_path
     end
   end
 

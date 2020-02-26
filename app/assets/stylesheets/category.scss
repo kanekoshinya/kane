@@ -105,3 +105,30 @@ li {
     }
   }
 }
+// new画面のscss
+.category{
+  padding-top: 35px;
+  width: calc(100% - 600px);
+  margin: 0 auto;
+  &__name{
+    font-size: 20px;
+    color:white;
+  }
+  .new_category{
+    display: flex;
+    .chat-group-form{
+      width:300px;
+    }
+  }
+  &__category{
+    text-align:center;
+    font-size:20px;
+    color:white;
+    padding:40px 0 ;
+  }
+  &__group{
+    font-size:20px;
+    color:white;
+    text-align: center;
+  }
+}
