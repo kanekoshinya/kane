@@ -60,8 +60,13 @@
       padding:0 10px;
       display: block;
       margin-bottom: 20px;
-      color: white;
+      color:white;
+      border-radius:20px;
+      background-color:#3399FF;
+      box-shadow:2px 2px 2px #555;
+      text-shadow:1px 1px #555;
     }
+    
     .pagination{
       display: flex;
       margin: 0 auto;
@@ -90,9 +95,16 @@
         margin-top: 30px;
         font-size: 20px;
         margin-left:20px;
+        
         &-btn{
+          padding:5px 10px;
           color: white;
           text-decoration: none;
+          border-radius:20px;
+          background-color:#3399FF;
+          margin-left:10px;
+          box-shadow:2px 2px 2px #555;
+          text-shadow:1px 1px #555;
         }
       }
   }

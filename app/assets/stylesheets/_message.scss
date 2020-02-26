@@ -49,14 +49,15 @@ $w:white;
   }
   &__contents{
     height:calc(100vh - 180px);
-    width: 1200px;
+    width: 800px;
     margin: 0 auto;
 
     padding-top:10px;
     overflow:scroll;
     .contents__message{
-      background-color:$w;
-      margin-bottom: 10px;
+      background-color:#CCFFFF;
+      margin-bottom: 20px;
+      border-radius:30px;
       
       &-message{
         margin-left: 20px;
