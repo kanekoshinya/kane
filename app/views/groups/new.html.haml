@@ -2,13 +2,13 @@
   = render "shared/header"
   .groups
     .groups__name
-      ジャンル名を入れてください
+      グループ名を入れてください
     =form_for @group do |f|
       = f.text_field :name, class: "chat-group-form__input", placeholder: "グループ名を入力してください"
       = f.collection_select :category_id, Category.all, :id, :name
       = f.submit "Save", class: "chat-group-form__action-btn"
     .groups__group
-      ジャンル一覧
+      グループ一覧
     .groups__groups
       - @groups.each do |group|
         = group.name
