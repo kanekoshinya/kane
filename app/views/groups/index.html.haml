@@ -27,7 +27,8 @@
         = f.submit
     .group__seach-list
       .group__seach-list
-      - if @groups.any?
+      - if @check.present?
         - @groups.each do |group|
           = link_to group_messages_path(group),class:"group__seach-list-btn" do
             = group.name
+      - else

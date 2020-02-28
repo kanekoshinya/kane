@@ -79,11 +79,39 @@
       }
     }
   }
+  &__junle__seach{
+    
+    color:white;
+    text-align: center;
+    &-name{
+      font-size: 25px;
+    }
+    &-seach{
+      font-size: 20px;
+      margin-top: 10px;
+    }
+    &-list{
+      margin-top: 30px;
+      font-size: 20px;
+      margin-left:20px;
+      
+      &-btn{
+        padding:5px 10px;
+        color: white;
+        text-decoration: none;
+        border-radius:20px;
+        background-color:#3399FF;
+        margin-left:10px;
+        box-shadow:2px 2px 2px #555;
+        text-shadow:1px 1px #555;
+      }
+    }
+}
   &__seach{
     
       color:white;
       text-align: center;
-      margin-top: 20px;
+      margin-top: 50px;
       &-name{
         font-size: 25px;
       }
