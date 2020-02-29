@@ -24,6 +24,12 @@
     &-right{
       font-size:30px;
       margin-right:50px;
+      display: flex;
+      &-like{
+        font-size: 20px;
+        color: white;
+        margin-right: 20px;
+      }
       .name-edit{
         text-decoration: none;
         color:white;
@@ -123,7 +129,6 @@
         margin-top: 30px;
         font-size: 20px;
         margin-left:20px;
-        
         &-btn{
           padding:5px 10px;
           color: white;
