@@ -1,16 +1,21 @@
 $(function(){
   function buildHTML(message){
+    
     var html =
-    `<div class="contents__message" data-message-id = "${message.id}">
+    `<div class="contents__message" data-message-id="${message.id}">
     <div class="contents__message-message">
-     ${message.content}
+    ${message.content}
     </div>
     <div class="contents__message-contents">
     <div class="contents__message-contents-good">
-    いいね
+    <form class="button_to" method="post" action="/groups/${message.group}/messages/${message.id}/likes"><input type="submit" value="Good"><input type="hidden" name="authenticity_token" value="n+iEDIgClMM3YOIguZMxWHXBRjQ8zF2wutNjxko6i80reyypddkNw2+OuXFUNThcEDmiR+p/bKl0byBCSxuQ0g=="></form>
     </div>
     <div class="contents__message-contents-name">
-     ${message.user_name}
+    ${message.user_name}
+    </div>
+    <div class="contents__message-contents-goodcount">
+    いいね数:
+    0
     </div>
     </div>
     </div>`

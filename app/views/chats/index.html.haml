@@ -4,48 +4,50 @@
       = link_to root_path,class:"toppage-btn" do
         Enjoy-app
     .group__header-right
+      .group__header-right-like
+        お気に入りグループ
       = link_to edit_user_path(current_user),class:"name-edit" do
         = current_user.name
-  .group__name
-    .group__name-list
-      ジャンル一覧
-      = link_to new_category_path,class:"group__name-list-new" do
-        ジャンル作成
-      = link_to new_group_path,class:"group__name-list-new" do
-        グループ作成
-    .group__name-name
-      - @category.each do |category|
-        = link_to category_groups_path(category),class:"group-btn" do
-          = category.name
-    = will_paginate @category, :previous_label => ' &lt 前へ', :next_label => '次へ &gt'
-  .group__junle__seach
-    .group__seach-name
-      ジャンル検索
-    .group__junnle_seach-seach
-      = search_form_for @p,as: :p, url:root_path do |f|
-        = f.search_field :name_cont, class: 'group__seach-box'
-        = f.submit
-    .group__junle__seach-list
-      - if @check.present?
-        - @categories.each do |categories|
-          = link_to category_groups_path(categories),class:"group__seach-list-btn" do
-            = categories.name
-      - else
-  .group__seach
-    .group__seach-name
-      グループ検索
-    .group__seach-seach
-      = search_form_for @q, url:root_path do |f|
-        = f.search_field :name_cont, class: 'group__seach-box'
-        = f.submit
-    .group__seach-list
-      - if @checks.present?
-        - @groups.each do |group|
-          = link_to group_messages_path(group),class:"group__seach-list-btn" do
-            = group.name
-      - else
-      
-        
+  .maingroup
+    .group__name
+      .group__name-list
+        ジャンル一覧
+        = link_to new_category_path,class:"group__name-list-new" do
+          ジャンル作成
+        = link_to new_group_path,class:"group__name-list-new" do
+          グループ作成
+      .group__name-name
+        - @category.each do |category|
+          = link_to category_groups_path(category),class:"group-btn" do
+            = category.name
+      = will_paginate @category, :previous_label => ' &lt 前へ', :next_label => '次へ &gt'
+    .group__junle__seach
+      .group__seach-name
+        ジャンル検索
+      .group__junnle_seach-seach
+        = search_form_for @p,as: :p, url:root_path do |f|
+          = f.search_field :name_cont, class: 'group__seach-box'
+          = f.submit
+      .group__junle__seach-list
+        - if @check.present?
+          - @categories.each do |categories|
+            = link_to category_groups_path(categories),class:"group__seach-list-btn" do
+              = categories.name
+        - else
+    .group__seach
+      .group__seach-name
+        グループ検索
+      .group__seach-seach
+        = search_form_for @q, url:root_path do |f|
+          = f.search_field :name_cont, class: 'group__seach-box'
+          = f.submit
+      .group__seach-list
+        - if @checks.present?
+          - @groups.each do |group|
+            = link_to group_messages_path(group),class:"group__seach-list-btn" do
+              = group.name
+        - else
+    
         
       
       
