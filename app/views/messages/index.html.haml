@@ -4,7 +4,10 @@
       .message__header-group-name
         = @group.name
       .message__header-group-lenght
-        5人参加中
+        - if current_user.already_favorited?(@group)
+          = button_to 'MYグループを取り消す',group_favorite_path(@group.id,@favorites.ids),method: :delete
+        - else 
+          = button_to 'MYグループ登録',group_favorites_path(@group.id)
     .message__header-left
       .message__header-left-back
         = link_to root_path,class:"toppage-btn" do

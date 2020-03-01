@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   root 'chats#index'
   resources :users, only: [:edit,:update]
   resources :categories,only: [:new,:create] do
-    resources :groups,only:[:index]
+    resources :groups,only:[:index] 
   end
+
   resources :groups,only: [:new,:create] do
+    resources :favorites, only: [:create,:destroy]
     resources :messages,only: [:index,:create] do
       resources :likes, only: [:create,:destroy]
     end

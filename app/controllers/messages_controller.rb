@@ -6,6 +6,8 @@ class MessagesController < ApplicationController
     @messages = @group.messages.includes(:user)
     @like = Like.new
     @likes = Like.where(user_id: current_user.id)
+    @favorite = Favorite.new
+    @favorites = Favorite.where(user_id: current_user.id)
   end
 
   def create

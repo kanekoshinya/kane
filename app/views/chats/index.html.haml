@@ -1,11 +1,18 @@
 .group
   .group__header
     .group__header-left
-      = link_to root_path,class:"toppage-btn" do
+      = link_to root_path,class:"toppage-btn",id:"top" do
         Enjoy-app
     .group__header-right
       .group__header-right-like
-        お気に入りグループ
+        = link_to url="#",class:"like-btn"do
+          MYグループ
+          - @favorites.each do |favorite|
+            - group = Group.find_by(id: favorite.group_id)
+            .group__header-right-like-menu
+              = link_to group_messages_path(group),class:"like-btn-name"do
+                = group.name
+            
       = link_to edit_user_path(current_user),class:"name-edit" do
         = current_user.name
   .maingroup
