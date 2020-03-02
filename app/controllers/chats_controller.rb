@@ -8,6 +8,5 @@ class ChatsController < ApplicationController
     @groups = @q.result(distinct: true).paginate(page: params[:page],per_page: 5)
     @checks = params[:q]
     @favorites = Favorite.where(user_id: current_user.id)
-    
   end
 end

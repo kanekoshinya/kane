@@ -1,4 +1,6 @@
 class LikesController < ApplicationController
+  
+  protect_from_forgery :except => ["create"]
 
   def create
     @group = Group.find(params[:group_id])
