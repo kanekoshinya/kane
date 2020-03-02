@@ -1,4 +1,3 @@
-
 $(function(){
 $('#top').animate({
   'fontSize': '50px'
