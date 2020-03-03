@@ -1,5 +1,5 @@
 $(function(){
 $('#top').animate({
-  'fontSize': '50px'
+  'fontSize': '30px'
 },2000)
 });
