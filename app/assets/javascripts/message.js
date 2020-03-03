@@ -11,7 +11,7 @@ $(function(){
     ${message.user_name}
     </div>
     <div class="contents__message-contents-good">
-    <form class="button_to" method="post" action="/groups/${message.group}/messages/${message.id}/likes"><input type="submit" value="🖤"><input type="hidden" name="authenticity_token" value="n+iEDIgClMM3YOIguZMxWHXBRjQ8zF2wutNjxko6i80reyypddkNw2+OuXFUNThcEDmiR+p/bKl0byBCSxuQ0g=="></form>
+    <form class="button_to" method="post" action="/groups/${message.group}/messages/${message.id}/likes"><input type="submit" value="👍"><input type="hidden" name="authenticity_token" value="n+iEDIgClMM3YOIguZMxWHXBRjQ8zF2wutNjxko6i80reyypddkNw2+OuXFUNThcEDmiR+p/bKl0byBCSxuQ0g=="></form>
     </div>
     <div class="contents__message-contents-goodcount">
     いいね数:

@@ -9,6 +9,9 @@
         - else 
           = button_to 'MYグループ登録',group_favorites_path(@group.id)
     .message__header-left
+      -# .message__header-left-like
+      -#   = link_to url="#" ,class:"toppage-btn" do
+      -#     いいね一覧
       .message__header-left-back
         = link_to root_path,class:"toppage-btn" do
           トップページ
@@ -27,7 +30,7 @@
               - if current_user.already_liked?(message)
                 = button_to '❤️',group_message_like_path(@group.id,message.id,@likes.ids),method: :delete
               - else 
-                = button_to '🖤',group_message_likes_path( @group.id,message.id)
+                = button_to '👍',group_message_likes_path( @group.id,message.id)
             
             .contents__message-contents-goodcount
               いいね数:
