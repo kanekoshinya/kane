@@ -1,0 +1,60 @@
+.group
+  = render "shared/header"
+  .like
+    .likemy
+      .likeview
+        .header
+          .header__left
+            いいねしたメッセージ一覧
+            (合計：
+            = @counts
+            件)
+          .header__right
+        .main
+          - @likes.each do |message|
+            .main__top
+            .main__main
+              = @count
+              メッセージ:
+              =message.content
+            .main__main--name
+              いいねした人:
+              = message.user.name
+            .main__main--group
+              グループ名：
+              =link_to group_messages_path(message[:group_id]) do
+                = message.group.category.name
+                [
+                = message.group.name
+                ]
+                - @count+=1
+            .main__bottom
+    .likeuser
+      .likeview
+        .header
+          .header__left
+            いいねされたメッセージ一覧
+            (合計：
+            = @countdd
+            件)
+          .header__right
+        .main
+          - @liked.each do |message|
+            .main__top
+            .main__main
+              = @countd
+              メッセージ:
+              =message.content
+            .main__main--name
+              いいねしてくれた人:
+              = message.user.name
+            .main__main--group
+              グループ名：
+              =link_to group_messages_path(message[:group_id]) do
+                = message.group.category.name
+                [
+                = message.group.name
+                ]
+                - @countd+=1
+            .main__bottom
+    .footer

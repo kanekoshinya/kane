@@ -1,0 +1,55 @@
+.like{
+  display: flex;
+  .likemy{
+    margin-left:75px;
+    .likeview{
+      overflow:scroll;
+      height: 600px;
+      width: 600px;
+      background-color:rgb(253, 240, 255);
+      padding-bottom: 30px;
+      margin:0 auto;
+      .header{
+        &__left{
+          text-align: center;
+        }
+      }
+      .main{
+        text-align: center;
+        &__top{
+          padding: 20px 0;
+        }
+        a{
+        text-decoration: none;
+        color: blue;
+        }
+      }
+    }
+  }
+  .likeuser{
+    margin-left:75px;
+    .likeview{
+      overflow:scroll;
+      height: 600px;
+      width: 600px;
+      background-color:rgb(190, 241, 167);
+      padding-bottom: 30px;
+      margin:0 auto;
+      .header{
+        &__left{
+          text-align: center;
+        }
+      }
+      .main{
+        text-align: center;
+        &__top{
+          padding: 20px 0;
+        }
+        a{
+        text-decoration: none;
+        color: blue;
+        }
+      }
+    }
+  }
+}
