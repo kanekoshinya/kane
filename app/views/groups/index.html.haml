@@ -8,7 +8,8 @@
         = current_user.name
   .group__name
     .group__name-list
-      グループ一覧
+      = @category.name
+      一覧
       = link_to new_category_path,class:"group__name-list-new" do
         ジャンル作成
       = link_to new_group_path,class:"group__name-list-new" do
