@@ -27,6 +27,13 @@ $w:white;
       &-lenght{
         font-size:15px;
         color: $w;
+          input{
+            font-size: 13px;
+            background-color:whitesmoke;
+            height: 40px;
+            width: 120px;
+            border-radius:20px;
+          }
       }
     }
     &-left{
